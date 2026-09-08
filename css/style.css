@@ -261,6 +261,54 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
 .service-link:hover span { transform: translateX(5px); }
 
 /* ============================================================
+   CURSOS
+   ============================================================ */
+.courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.course-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex; flex-direction: column;
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.course-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); }
+.course-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.course-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+.course-card:hover .course-img img { transform: scale(1.08); }
+.course-body { padding: 26px 24px 28px; display: flex; flex-direction: column; flex: 1; }
+.course-body h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.course-body p { color: var(--muted); font-size: 0.9rem; margin-bottom: 14px; }
+.course-tag { display: block; font-family: var(--font-ui); font-size: 0.76rem; color: var(--gold); letter-spacing: 0.01em; margin-bottom: 20px; }
+.course-body .btn { margin-top: auto; align-self: flex-start; }
+
+.pratica-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 70px; align-items: center; }
+.pratica-content .section-lead { margin-top: 4px; }
+.pratica-media img { border-radius: var(--radius-lg); width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 1px solid rgba(200,168,106,0.25); box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6); }
+
+.audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+.audience-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(200,168,106,0.15);
+  border-radius: var(--radius-md);
+  padding: 36px 30px;
+  transition: transform 0.5s var(--ease), border-color 0.5s var(--ease), background 0.5s var(--ease);
+}
+.audience-card:hover { transform: translateY(-8px); border-color: var(--gold); background: rgba(200,168,106,0.06); }
+.audience-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+.audience-card p { color: var(--muted); font-size: 0.92rem; }
+
+.turmas-content { max-width: 640px; margin: 0 auto; text-align: center; }
+.turmas-list {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 30px;
+  margin: 24px 0 36px; text-align: left;
+}
+.turmas-list li { position: relative; padding-left: 22px; color: var(--gray-light); font-size: 0.95rem; }
+.turmas-list li::before { content: ''; position: absolute; left: 0; top: 11px; width: 8px; height: 1px; background: var(--gold); }
+
+.cta-final-inner p + p { margin-top: 14px; }
+
+/* ============================================================
    BENEFÍCIOS
    ============================================================ */
 .section-beneficios-bg::before {
@@ -486,6 +534,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
   .diff-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(3, 1fr); row-gap: 40px; }
   .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .courses-grid { grid-template-columns: repeat(2, 1fr); }
+  .audience-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -495,8 +545,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
   .menu-toggle { display: flex; }
   .btn-header { display: none; }
 
-  .sobre-grid, .faq-grid { grid-template-columns: 1fr; gap: 50px; }
+  .sobre-grid, .faq-grid, .pratica-grid { grid-template-columns: 1fr; gap: 50px; }
   .sobre-media-frame { display: none; }
+  .pratica-media { order: -1; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .timeline { flex-direction: column; gap: 36px; align-items: flex-start; }
@@ -515,6 +566,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
   .diff-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
+  .courses-grid { grid-template-columns: 1fr; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .turmas-list { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr; gap: 40px; }
   .footer-inner { grid-template-columns: 1fr; gap: 34px; }
   .gallery-masonry { columns: 1; }

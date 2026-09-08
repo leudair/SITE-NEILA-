@@ -42,6 +42,21 @@ favicon.png    Ícone da aba do navegador. 512x512, fundo sólido
                da Neila. Enquanto não existir, o navegador usa o ícone
                padrão — não quebra nada, só não personaliza a aba.
 
+curso-intro.jpg                        Neila ensinando (seção "Cursos Presenciais")
+curso-relaxante-pedras.jpg             Card do curso Massagem Relaxante + Pedras Quentes
+curso-terapeutica-ventosaterapia.jpg   Card do curso Massagem Terapêutica + Ventosaterapia
+curso-liberacao-miofascial.jpg         Card do curso Liberação Miofascial Desportiva
+curso-drenagem-linfatica.jpg           Card do curso Drenagem Linfática e Pós-operatório
+curso-modeladora.jpg                   Card do curso Massagem Modeladora
+curso-desportiva.jpg                   Card do curso Massagem Desportiva
+curso-pratica.jpg                      Aluno praticando (seção "Da Teoria para a Prática")
+curso-cta.jpg                          Imagem do CTA final dos cursos
+
+Enquanto essas imagens não existirem, o site exibe um placeholder
+elegante automático (js/app.js já trata erro de imagem quebrada) —
+não quebra o layout, só não personaliza até você adicionar os arquivos
+reais com esses mesmos nomes nesta pasta.
+
 DICA
 ----
 Se quiser trocar qualquer imagem/vídeo por um mais atual no futuro, é
