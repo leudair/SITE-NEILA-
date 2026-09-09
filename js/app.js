@@ -197,9 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Service card hover video preview ---------- */
-  document.querySelectorAll('.service-card').forEach(card => {
-    const video = card.querySelector('.service-video');
+  /* ---------- Service/course card hover video preview ---------- */
+  document.querySelectorAll('.service-card, .course-card').forEach(card => {
+    const video = card.querySelector('.service-video, .course-video');
     if (!video) return;
     card.addEventListener('mouseenter', () => {
       video.currentTime = 0;

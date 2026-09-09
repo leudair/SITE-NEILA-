@@ -274,8 +274,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
 }
 .course-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -20px rgba(0,0,0,0.7); }
 .course-img { position: relative; aspect-ratio: 4/3; overflow: hidden; }
-.course-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+.course-img img,
+.course-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease), opacity 0.5s var(--ease); }
+.course-video { opacity: 0; }
 .course-card:hover .course-img img { transform: scale(1.08); }
+.course-card:hover .course-video { opacity: 1; transform: scale(1.08); }
 .course-body { padding: 26px 24px 28px; display: flex; flex-direction: column; flex: 1; }
 .course-body h3 { font-size: 1.1rem; margin-bottom: 10px; }
 .course-body p { color: var(--muted); font-size: 0.9rem; margin-bottom: 14px; }
@@ -284,7 +287,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
 
 .pratica-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 70px; align-items: center; }
 .pratica-content .section-lead { margin-top: 4px; }
-.pratica-media img { border-radius: var(--radius-lg); width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 1px solid rgba(200,168,106,0.25); box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6); }
+.pratica-media img,
+.pratica-media video { border-radius: var(--radius-lg); width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 1px solid rgba(200,168,106,0.25); box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6); }
 
 .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
 .audience-card {
@@ -469,7 +473,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
 .cta-final h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 20px; }
 .cta-final p { color: var(--muted); font-size: 1.05rem; margin-bottom: 40px; }
 .cta-final-media { border-radius: var(--radius-lg); overflow: hidden; transform: rotate(2deg); box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6); border: 1px solid rgba(200,168,106,0.25); }
-.cta-final-media img { aspect-ratio: 4/5; object-fit: cover; }
+.cta-final-media img,
+.cta-final-media video { aspect-ratio: 4/5; object-fit: cover; width: 100%; }
 @media (max-width: 900px) {
   .cta-final-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
   .cta-final-inner { max-width: 100%; margin: 0 auto; }
