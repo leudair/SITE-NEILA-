@@ -190,6 +190,18 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
     linear-gradient(90deg, rgba(11,11,11,0.75) 0%, rgba(11,11,11,0.35) 60%);
 }
 .hero-content { position: relative; z-index: 1; max-width: 680px; padding: 0 40px; margin: 0 auto 0 8vw; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 9px 20px; margin-bottom: 22px;
+  border: 1px solid rgba(200,168,106,0.4); border-radius: 100px;
+  background: rgba(200,168,106,0.08);
+  font-family: var(--font-ui); font-size: 0.82rem; color: var(--gold-light);
+  transition: border-color 0.35s var(--ease), background 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.hero-badge .icon { width: 16px; height: 16px; }
+.hero-badge span { transition: transform 0.35s var(--ease); }
+.hero-badge:hover { border-color: var(--gold); background: rgba(200,168,106,0.16); transform: translateY(-2px); }
+.hero-badge:hover span { transform: translateX(4px); }
 .hero-title { font-size: clamp(2.6rem, 5.4vw, 4.6rem); color: var(--white); margin-bottom: 26px; }
 .hero-title-accent { color: var(--gold); font-style: italic; }
 .hero-text { font-size: 1.12rem; color: var(--gray-light); max-width: 520px; margin-bottom: 40px; }
@@ -566,7 +578,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(
 @media (max-width: 640px) {
   .section { padding: 90px 0; }
   .section-inner { padding: 0 24px; }
-  .hero-content { margin: 0 auto; padding: 0 24px; }
+  .hero-content { margin: 0 auto; padding: 90px 24px 0; }
+  .hero-badge { font-size: 0.76rem; padding: 8px 16px; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
   .diff-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
